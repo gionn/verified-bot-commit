@@ -45,6 +45,27 @@ were not committed by the Action will be left staged.
       test-data/**
 ```
 
+## Standalone CLI
+
+The action is also available as a standalone CLI via the
+[`@iarekylewoot/verified-bot-commit`](https://github.com/IAreKyleW00t/verified-bot-commit/pkgs/npm/verified-bot-commit)
+package on GitHub Packages.
+
+```sh
+npx --yes @iarekylewoot/verified-bot-commit \
+  --repository owner/repo \
+  --ref main \
+  --files "**/*.ts" \
+  --message "chore: updates" \
+  --token $GITHUB_TOKEN
+```
+
+The `--yes` flag is required in non-interactive environments (CI, GitHub
+Actions) to skip the install confirmation prompt.
+
+Run `npx @iarekylewoot/verified-bot-commit --help` to see all available flags,
+which mirror the action inputs 1:1.
+
 ## Usage
 
 ### Inputs
