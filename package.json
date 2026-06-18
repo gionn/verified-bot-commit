@@ -1,11 +1,11 @@
 {
-  "name": "@gionn/verified-bot-commit",
+  "name": "@gionn-net/verified-bot-commit",
   "description": "GitHub Action for creating signed and verified bot commits",
   "version": "2.3.2",
   "author": "Kyle Colantonio",
   "private": false,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "homepage": "https://github.com/gionn/verified-bot-commit",
   "repository": {

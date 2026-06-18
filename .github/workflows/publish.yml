@@ -10,11 +10,10 @@ on:
 
 jobs:
   publish:
-    name: Publish to GitHub Packages
+    name: Publish to npm
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
 
     steps:
       - name: Checkout repo
@@ -24,7 +23,7 @@ jobs:
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: .tool-versions
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
           cache: npm
 
       - name: Install Dependencies
@@ -45,12 +44,12 @@ jobs:
 
       - name: Publish
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: npm publish --tag latest
+        run: npm publish --access public --tag latest
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish prerelease
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: npm publish --tag alpha
+        run: npm publish --access public --tag alpha
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
