@@ -1,5 +1,5 @@
 {
-  "name": "@iarekylewoot/verified-bot-commit",
+  "name": "@gionn/verified-bot-commit",
   "description": "GitHub Action for creating signed and verified bot commits",
   "version": "2.3.2",
   "author": "Kyle Colantonio",
@@ -7,13 +7,13 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "homepage": "https://github.com/IAreKyleW00t/verified-bot-commit",
+  "homepage": "https://github.com/gionn/verified-bot-commit",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IAreKyleW00t/verified-bot-commit.git"
+    "url": "git+https://github.com/gionn/verified-bot-commit.git"
   },
   "bugs": {
-    "url": "https://github.com/IAreKyleW00t/verified-bot-commit/issues"
+    "url": "https://github.com/gionn/verified-bot-commit/issues"
   },
   "keywords": [
     "actions",
